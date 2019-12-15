@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "chapter1-6-1", "chapter1-6-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dll", "Dll\Dll.csproj", "{0FEA69E0-662F-4890-BCA3-26D77676F0BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBase", "DataBase\DataBase.csproj", "{BC957E23-C233-480C-9F02-C354FC390FCD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{0FEA69E0-662F-4890-BCA3-26D77676F0BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FEA69E0-662F-4890-BCA3-26D77676F0BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FEA69E0-662F-4890-BCA3-26D77676F0BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC957E23-C233-480C-9F02-C354FC390FCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC957E23-C233-480C-9F02-C354FC390FCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC957E23-C233-480C-9F02-C354FC390FCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC957E23-C233-480C-9F02-C354FC390FCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
