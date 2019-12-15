@@ -12,7 +12,10 @@ namespace chapter1_6_1
 //            test3();
 //            test4();
 //            test5();
-            test6();
+//            test6();
+//            test7();
+//            test8();
+            test9();
         }
 
         // Linq 语法 基础1
@@ -62,10 +65,55 @@ namespace chapter1_6_1
             Log4C.log.Debug("求和" + result.Sum());
         }
 
+        // 演示 LINQ 操作实体类集合1
         public static void test6() {
             var result = BaseData.customers.Where(c => c.Region == "Asia");
             result.ForEach(x => Log4C.log.Debug(x));
         }
+        // 演示 LINQ 操作实体类集合2  投影操作
 
+        /**
+            如果熟悉 SQL 数据查询语言中的 SELECT 关
+            键字，就很熟悉从数据对象中选择某个字段的操作，而不是选择整个对象。在 LINQ 中，也可以这
+            么做，例如，前面的例于只从Customer 列表中选挥City 字段，只需修改查询语句中的select 子句，
+            以便仅引用City 属性
+        * @Date:   2019/12/15
+        */
+        public static void test7() {
+            var result = BaseData.customers.Where(c => c.Region == "North America").Select(c=> new {c.City, c.Country, c.Sales} );
+            result.ForEach(x => Log4C.log.Debug(x));
+        }
+
+        // 演示 Distinct 去重
+        public static void test8() {
+            var result = BaseData.customers.Select(c => c.Region);
+            result.ForEach(x => Log4C.log.Debug(x));
+            Log4C.log.Debug("-----------------------");
+            var result2 = result.Distinct();
+            result2.ForEach(x => Log4C.log.Debug(x));
+        }
+
+
+        // 演示 Any 条件判断： 若集合内有一条记录满足条件那么结果就是true 否则为 false
+        public static void test9() {
+            var result = BaseData.customers.Any(c => c.Country == "USA");
+            if (result) {
+                Log4C.log.Debug("Some customers are in the USA");
+            }
+            else {
+                Log4C.log.Debug("No customers are in the USA");
+            }
+        }
+
+        // 演示 All 条件判断： 集合内必须所有记录都要满足条件 结果才是true 否则 false
+        public static void test10() {
+            bool allAsia = BaseData.customers.All(c => c.Region == "Asia");
+            if (allAsia) {
+                Log4C.log.Debug("All customers are in Asia");
+            }
+            else {
+                Log4C.log.Debug("Not all customers are in Asia");
+            }
+        }
     }
 }
