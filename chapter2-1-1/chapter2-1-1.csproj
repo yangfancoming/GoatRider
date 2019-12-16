@@ -6,4 +6,8 @@
         <RootNamespace>chapter2_1_1</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Dll\Dll.csproj" />
+    </ItemGroup>
+
 </Project>

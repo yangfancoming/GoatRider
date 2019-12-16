@@ -1,9 +1,9 @@
-﻿using System;
+﻿using chapter2_1_1.temp;
 
 namespace chapter2_1_1 {
     class Program {
-        static void Main(string[] args) {
-            Console.WriteLine("Hello World!");
+        static void Main() {
+            App.app();
         }
     }
 }
