@@ -10,4 +10,8 @@
       <ProjectReference Include="..\Dll\Dll.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="strategy\item01" />
+    </ItemGroup>
+
 </Project>

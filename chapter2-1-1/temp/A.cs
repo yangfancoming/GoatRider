@@ -10,7 +10,7 @@ namespace chapter2_1_1.temp {
         public event FallEventHandler FallEvent;
 
         public void Raise(string hand){
-            Log4C.log.Debug("首领A"+hand+"手举杯");
+            Log4C.log.DebugFormat("首领A {} 手举杯",hand);
             RaiseEvent(hand);// 调用举杯事件，传入左或右手作为参数
         }
 
