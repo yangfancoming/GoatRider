@@ -4,7 +4,23 @@ using DataBase.model;
 namespace DataBase {
     public static class BaseData{
         public static readonly string[] names = { "Alonso", "Zheng", "Smith", "Jones", "Smythe", "Small", "Ruiz", "Hsieh", "Jorgenson", "Ilyich", "Singh", "Samba", "Fatimah" };
+
         public static readonly int[] nums = { 6,5,4,3,2,1};
+
+        public static readonly List<Order> orders = new List<Order> {
+            new Order { ID="P", Amount=100 },
+            new Order { ID="Q", Amount=200 },
+            new Order { ID="R", Amount=300 },
+            new Order { ID="S", Amount=400 },
+            new Order { ID="T", Amount=500 },
+            new Order { ID="U", Amount=600 },
+            new Order { ID="V", Amount=700 },
+            new Order { ID="W", Amount=800 },
+            new Order { ID="X", Amount=900 },
+            new Order { ID="Y", Amount=1000 },
+            new Order { ID="Z", Amount=1100 }
+        };
+
         public static readonly List <Customer> customers = new List<Customer> {
               new Customer { ID="A", City="New York", Country="USA", Region="North America", Sales=9999},
               new Customer { ID="B", City="Mumbai", Country="India", Region="Asia", Sales=8888},

@@ -13,7 +13,6 @@ namespace chapter1_6_1 {
                     from c in BaseData.customers
                     group c by c.Region into cg
                     select new { TotalSales = cg.Sum(c => c.Sales), Region = cg.Key };
-
             queryResults.ForEach(x => Log4C.log.Debug(x));
         }
 
@@ -43,11 +42,38 @@ namespace chapter1_6_1 {
             var firstOrDefault = list.FirstOrDefault(c => c.Region == "Antartica");
             Log4C.log.Debug("---------演示 FirstOrDefault ---------" + firstOrDefault);
 
-
             var temp = list.First(c => c.Region == "Antartica");
             Log4C.log.Debug("---------演示 null ---------" + temp);
         }
 
+        // 演示 集运算符  Intersect()  Except() Union()
+        public static void test4() {
+            // 用户表id
+            var customerIDs = BaseData.customers.Select(c=>c.ID);
+            // 订单表id
+            var orderIDs = BaseData.orders.Select(c=>c.ID);
+            Log4C.log.Debug("---------获取两个表的交集  Intersect() ---------" );
+            var customersWithOrders = customerIDs.Intersect(orderIDs);
+            customersWithOrders.ForEach(x => Log4C.log.Debug(x));
 
+            Log4C.log.Debug("---------获取两个表的差集 Except()---------" );
+            var ordersNoCustomers = orderIDs.Except(customerIDs);
+            ordersNoCustomers.ForEach(x => Log4C.log.Debug(x));
+
+            // 注意，ID 的输出顺序与它们在顾客和订单列表中的顺序相同，只是删除了重复的项。
+            Log4C.log.Debug("---------获取两个表的并集 Union()---------" );
+            var allCustomerOrderIDs = orderIDs.Union(customerIDs);
+            allCustomerOrderIDs.ForEach(x => Log4C.log.Debug(x));
+        }
+
+        // 演示 Join查询
+        public static void test5() {
+            var queryResults =
+                from c in BaseData.customers
+                // on 关键字在关键字段 ID 的后面，equals 关键字指定另一个集合中的对应字段。查询结果仅包含两个集中ID 字段值相同的对象数据
+                join o in BaseData.orders on c.ID equals o.ID
+                select new { c.ID, c.City, SalesBefore = c.Sales, NewOrder = o.Amount, SalesAfter = c.Sales+o.Amount };
+            queryResults.ForEach(x => Log4C.log.Debug(x));
+        }
     }
 }

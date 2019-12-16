@@ -21,7 +21,9 @@ namespace chapter1_6_1
 
 //            Linq2.test1();
 //            Linq2.test2();
-            Linq2.test3();
+//            Linq2.test3();
+//            Linq2.test4();
+            Linq2.test5();
         }
 
     }
