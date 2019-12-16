@@ -4,7 +4,7 @@ namespace chapter1_0_2 {
 
 
         /// <summary>
-        /// 参数数组
+        /// 参数数组   可变长参数
         /// </summary>
         /// <param name="vals"></param>
         /// <returns></returns>
