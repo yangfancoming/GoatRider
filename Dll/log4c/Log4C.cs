@@ -4,7 +4,7 @@ using log4net;
 using log4net.Config;
 
 
-namespace Dll
+namespace Dll.log4c
 {
     public static class Log4C
     {
