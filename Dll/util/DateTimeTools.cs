@@ -79,6 +79,10 @@ namespace GoatTools
 
 
 
+        /**
+            DateTime tm = DateTimeTools.GetTime("1522661499");
+            String tem =  tm.ToString();
+        */
         public static DateTime GetTime(string timeStamp)
         {
             DateTime dtStart = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));

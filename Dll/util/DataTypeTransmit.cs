@@ -30,6 +30,8 @@ namespace GoatTools
             }
             return BitConverter.ToInt16(TempArry, 0);
         }
+
+        //   P1= "02000300040005000600070008000a00" P2= 4   返回：  0200 0300 0400 0500 0600 0700 0800 0a00
         public static byte[] StringToByteArray(string hex) {// 十六进制string 转换成 byte[]  该函数不能输入单个字符  eg：“A”
             hex = hex.Replace(" ", "");
             return Enumerable.Range(0, hex.Length)
