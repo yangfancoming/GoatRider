@@ -10,12 +10,14 @@ namespace Dll.log4c
     {
         public static readonly ILog log = LogManager.GetLogger(typeof(Log4C));
 
-        static Log4C()
-        {
+        static Log4C() {
             var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
             XmlConfigurator.Configure(logRepository, new FileInfo("log4C/log4net.config"));
         }
-        
+
+
+
+//        LogHelper.Debug(string.Format("已删除日志。{0}", info.Name));
 //            Log4C.log.Debug("Starting up");
 //            Log4C.log.Debug("Shutting down");
     }
