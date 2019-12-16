@@ -1,6 +1,6 @@
 using System.Linq;
 using DataBase;
-using Dll;
+using Dll.log4c;
 
 namespace chapter1_6_1 {
 
