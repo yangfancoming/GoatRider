@@ -2,7 +2,7 @@
 
 namespace GoatTools
 {
-    public class Judge
+    public class JudgeUtil
     {
         public static  bool IsOk(string hex) //用来判断 给定字符串里 是否全部都是16进制数据
         {

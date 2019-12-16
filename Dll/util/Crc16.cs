@@ -43,13 +43,11 @@ namespace GoatTools
             };
 
 
-        public static int CRC16(Byte[] dat, int count)
-        {
+        public static int CRC16(Byte[] dat, int count){
             int crc = 0;
             Byte crctemp;
             int i = 0;
-            while (count > 0)
-            {
+            while (count > 0){
                 count -= 1;
                 crctemp = Convert.ToByte(crc >> 8);
                 crc = (crc << 8) & 0xFFFF;
@@ -59,14 +57,12 @@ namespace GoatTools
             return crc;
         }
 
-        public static int CRC16(Byte[] dat)
-        {
+        public static int CRC16(Byte[] dat){
             int crc = 0;
             Byte crctemp;
             int length = dat.Length;
             int i = 0;
-            while (length > 0)
-            {
+            while (length > 0){
                 length -= 1;
                 crctemp = Convert.ToByte(crc >> 8);
                 crc = (crc << 8) & 0xFFFF;
