@@ -4,10 +4,10 @@ using log4net;
 using log4net.Config;
 
 
-namespace Dll.log4c
-{
-    public static class Log4C
-    {
+namespace Dll.log4c {
+
+    public static class Log4C {
+
         public static readonly ILog log = LogManager.GetLogger(typeof(Log4C));
 
         static Log4C() {
