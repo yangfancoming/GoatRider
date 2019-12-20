@@ -7,8 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="excel" />
       <Folder Include="word" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="NPOI" Version="2.4.1" />
+      <PackageReference Include="NPOI.Excel" Version="2.1.1" />
     </ItemGroup>
 
 </Project>

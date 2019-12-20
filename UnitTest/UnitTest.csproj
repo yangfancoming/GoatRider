@@ -16,6 +16,7 @@
       <ProjectReference Include="..\chapter1-0-2\chapter1-0-2.csproj" />
       <ProjectReference Include="..\chapter1-1-1\chapter1-1-1.csproj" />
       <ProjectReference Include="..\chapter1-7-1\chapter1-7-1.csproj" />
+      <ProjectReference Include="..\chapter2-5-1\chapter2-5-1.csproj" />
       <ProjectReference Include="..\Dll\Dll.csproj" />
     </ItemGroup>
 
