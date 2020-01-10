@@ -7,7 +7,7 @@ namespace chapter1_6_1 {
     public class Linq1 {
 
         // Linq 语法 基础1
-        public static void test1()        {
+        public static void test1() {
             var result =
                 // 获取数据源 ( string[] )
                 from n in BaseData.names

@@ -3,6 +3,7 @@ using DataBase.model;
 
 namespace DataBase {
     public static class BaseData{
+
         public static readonly string[] names = { "Alonso", "Zheng", "Smith", "Jones", "Smythe", "Small", "Ruiz", "Hsieh", "Jorgenson", "Ilyich", "Singh", "Samba", "Fatimah" };
 
         public static readonly int[] nums = { 6,5,4,3,2,1};
