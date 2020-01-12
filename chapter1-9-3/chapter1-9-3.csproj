@@ -6,4 +6,8 @@
         <RootNamespace>chapter1_9_3</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="FluentFTP" Version="29.0.1" />
+    </ItemGroup>
+
 </Project>
