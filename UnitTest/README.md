@@ -12,6 +12,7 @@
     - chapter1-9-2  minio
     - chapter1-9-3  ftp
     - chapter1-9-5  WebApiClient 
+    - chapter1-9-7  HTTPClient 
 
     - chapter2-1-1  设计模式
     - chapter2-5-1  office
