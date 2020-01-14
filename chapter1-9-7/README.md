@@ -1,11 +1,9 @@
-#   WebApiClient.JIT
+#  PostAsJsonAsync 方法 不支持/没找到
+    await client.PostAsJsonAsync("hello/success2", product);
+    原因：需要引入  
+    System.Net.Http.Formatting 
+    System.Net.Http;
+    System.Net.Http.Headers;
 
-    Nuget包
-    WebApiClient.JIT
-    
-    不适用于不支持JIT技术的平台(IOS、UWP)；
-    Http接口声明要求为public；
-    
-    WebApiClient.AOT
-    适用于不支持JIT技术的平台(IOS、UWP)；
-    Http接口声明不要求为public，可以嵌套在类里面；
+
+

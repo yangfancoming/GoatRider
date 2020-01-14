@@ -1,3 +1,4 @@
+using chapter1_9_7;
 using Dll.log4c;
 using NUnit.Framework;
 
@@ -6,8 +7,14 @@ namespace UnitTest {
 
         [Test]
         public void test() {
+            HttpClient1.test1();
+        }
 
-            Log4C.log.Debug("数组中的最大值" );
+
+        [Test]
+        public void test2() {
+            var task = HttpClient1.test2();
+            Log4C.log.Debug($"Created at {task}");
         }
     }
 }
