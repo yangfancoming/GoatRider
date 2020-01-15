@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -45,6 +46,23 @@ namespace chapter1_9_7 {
                 product = await response.Content.ReadAsAsync<Product>();
             }
             return product;
+        }
+
+
+        static async Task<Product> UpdateProductAsync(Product product)
+        {
+            HttpResponseMessage response = await client.PutAsJsonAsync($"api/products/{product.id}", product);
+            response.EnsureSuccessStatusCode();
+            // Deserialize the updated product from the response body.
+            product = await response.Content.ReadAsAsync<Product>();
+            return product;
+        }
+
+
+        static async Task<HttpStatusCode> DeleteProductAsync(string id)
+        {
+            HttpResponseMessage response = await client.DeleteAsync($"api/products/{id}");
+            return response.StatusCode;
         }
 
 
