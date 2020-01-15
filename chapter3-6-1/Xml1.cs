@@ -27,20 +27,16 @@ namespace chapter3_6_1 {
 
 
         public static void getChild(XmlNodeList xmlNodeList){
-            if (xmlNodeList.Count > 0){
-                foreach (XmlNode child in xmlNodeList) {
-
-                    switch (child.NodeType) {
-                        case XmlNodeType.Text: {
-                            Log4C.log.Debug("文本名称：" + child.Name + "文本内容：" + child.InnerText);
-                            break;
-                        }
-                        case XmlNodeType.Element: {
-                            Log4C.log.Debug("子节点名称：" + child.Name + "子节点内容：" + child.InnerText);
-                            getChild(child.ChildNodes);
-                            break;
-                        }
-                    }
+            if (xmlNodeList.Count <= 0) return;
+            foreach (XmlNode child in xmlNodeList) {
+                switch (child.NodeType) {
+                    case XmlNodeType.Text:
+                        Log4C.log.Debug("文本名称：" + child.Name + "文本内容：" + child.InnerText);
+                        break;
+                    case XmlNodeType.Element:
+                        Log4C.log.Debug("子节点名称：" + child.Name + "子节点内容：" + child.InnerText);
+                        getChild(child.ChildNodes);
+                        break;
                 }
             }
         }
