@@ -11,6 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="chain" />
       <Folder Include="strategy\item01" />
     </ItemGroup>
 

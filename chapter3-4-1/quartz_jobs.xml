@@ -9,7 +9,7 @@
   </processing-directives>
 
   <schedule>
-    
+
     <job>
       <name>jobName1</name>
       <group>jobGroup1</group>
@@ -18,7 +18,7 @@
       <durable>true</durable>
       <recover>false</recover>
     </job>
-    
+
     <trigger>
         <cron>
             <name>smsTrigger</name>
@@ -32,5 +32,5 @@
     </trigger>
 
   </schedule>
-  
+
 </job-scheduling-data>

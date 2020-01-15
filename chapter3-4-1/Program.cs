@@ -19,8 +19,8 @@ namespace chapter3_4_1 {
 
         public static void Main() {
 //            Run1().GetAwaiter().GetResult();
-            Run2().GetAwaiter().GetResult();
-//            Run3().GetAwaiter().GetResult();
+//            Run2().GetAwaiter().GetResult();
+            Run3().GetAwaiter().GetResult();
         }
 
 

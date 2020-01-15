@@ -13,8 +13,13 @@ namespace chapter1_7_1.dictionary {
             myDictionary.Add(3,"ASP.NET");
             myDictionary.Add(4,"MVC");
 
+            // 获取元素
+            var s = myDictionary[1];
+            Log4C.log.Debug(s);
+
+            // 判断元素
             if(myDictionary.ContainsKey(1)){
-                Log4C.log.DebugFormat("3、 通过Key查找元素   Key---{0},Value---{1}","1", myDictionary[1]);
+                Log4C.log.DebugFormat("3、 通过Key查找元素   Key---{0},Value---{1}","1", s);
             }
 
             foreach (var kvp  in myDictionary) {
@@ -32,9 +37,10 @@ namespace chapter1_7_1.dictionary {
             }
 
 
+            // 删除元素
             myDictionary.Remove(1);
             if(myDictionary.ContainsKey(1)){
-                Log4C.log.DebugFormat(" 7、通过Remove方法移除指定的键值 Key:{0},Value:{1}","1", myDictionary[1]);
+                Log4C.log.DebugFormat(" 7、通过Remove方法移除指定的键值 Key:{0},Value:{1}","1", s);
             }
             else{
                 Log4C.log.DebugFormat(" 7、通过Remove方法移除指定的键值 不存在 Key : 1");
