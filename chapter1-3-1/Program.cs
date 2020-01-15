@@ -13,8 +13,8 @@ namespace chapter1_3_1 {
         }
 
         public static void item03() {
-//            IShout iShout = new item03.Cat();
-            IShout iShout = new item03.Dog();
+            IShout iShout = new item03.Cat();
+//            IShout iShout = new item03.Dog();
             iShout.shout();
         }
 
