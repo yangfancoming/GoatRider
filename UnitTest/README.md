@@ -21,3 +21,4 @@
 
     - chapter3-4-1  定时任务---Quartz.Net
     - chapter3-4-2  
+    - chapter3-6-1  解析xml 
