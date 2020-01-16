@@ -3,49 +3,36 @@ using Dll.log4c;
 
 namespace chapter3_5_5 {
 
-/**
-        public static void weekday(Weekdays day){
-            switch (day){
-                case Weekdays.Mon:
-                    Log4C.log.Debug("今天是星期一");
-                    break;
-                case Weekdays.Tues:
-                    Log4C.log.Debug("明天是星期二");
-                    break;
-                case Weekdays.Wed:
-                    Log4C.log.Debug("后天是星期三");
-                    break;
-                case Weekdays.Thur:
-                    Log4C.log.Debug("几天后星期四");
-                    break;
-                case Weekdays.Fri:
-                    Log4C.log.Debug("几天后星期五");
-                    break;
-                case Weekdays.Sat:
-                    Log4C.log.Debug("几天后星期六");
-                    break;
-                case Weekdays.Sun:
-                    Log4C.log.Debug("几天后星期日");
-                    break;
-                default:
-                    Log4C.log.Debug("参数错误！");
-                    break;
-            }
+    public static class FileSystemWatcher1 {
+
+       private static readonly FileSystemWatcher watcher = new FileSystemWatcher();
+
+        public static void startWatcher() {
+            watcher.EnableRaisingEvents = true; // 收到改变通知时是否提交事件。如果EnableRaisingEvents属性设为假，对象将不会提交改变事件。如果设为真，它将提交改变事件
         }
-*/
-    public class FileSystemWatcher1 {
 
-        public static void WatcherStrat(string path, string filter) {
+        public static void stopWatcher() {
+            watcher.EnableRaisingEvents = false;
+        }
 
-            FileSystemWatcher watcher = new FileSystemWatcher();
+        /**
+        若要监视所有文件中的更改，请将 Filter 属性设置为空字符串 ("") 或使用通配符（“*.*”）。
+        若要监视特定的文件，请将 Filter 属性设置为该文件名。
+        例如，若要监视文件 MyDoc.txt 中的更改，请将 Filter 属性设置为“MyDoc.txt”。
+        也可以监视特定类型文件中的更改。
+        例如，若要监视文本文件中的更改，请将 Filter 属性设置为“*.txt”。
+        指定类型文件，格式如:*.txt,*.doc,*.rar
+        */
+        public static void initWatcher(string path, string filter = "*.*") {
+
             watcher.Path = path; //  监控 指定目录下发生的所有改变。
             watcher.Filter = filter; // 过滤掉某些类型的文件发生的变化。例如，如果我们只希望在TXT文件被修改/新建/删除时提交通知，可以将这个属性设为“*txt”。在处理高流量或大型目录时，使用这个属性非常方便。
             watcher.Changed += OnChanged; // 当被监控的目录中有一个文件被修改时，就提交这个事件。值得注意的是，这个事件可能会被提交多次，即使文件的内容仅仅发生一项改变。这是由于在保存文件时，文件的其它属性也发生了改变。
             watcher.Created += OnCreated; // 当被监控的目录新建一个文件时，触发。如果你计划用这个事件移动新建的事件，你必须在事件处理器中写入一些错误处理代码，它能处理当前文件被其它进程使用的情况。之所以要这样做，是因为Created事件可能在建立文件的进程释放文件之前就被提交。如果你没有准备正确处理这种情况的代码，就可能出现异常。
             watcher.Deleted += OnDeleted; // 当被监控的目录中有一个文件被删除，触发。
             watcher.Renamed += OnRenamed; // 当被监控的目录中有一个文件被重命名，就提交这个事件。
-            watcher.EnableRaisingEvents = true; // 收到改变通知时是否提交事件。如果EnableRaisingEvents属性设为假，对象将不会提交改变事件。如果设为真，它将提交改变事件
             watcher.NotifyFilter = NotifyFilters.Attributes | NotifyFilters.CreationTime | NotifyFilters.DirectoryName | NotifyFilters.FileName | NotifyFilters.LastAccess | NotifyFilters.LastWrite | NotifyFilters.Security | NotifyFilters.Size;
+            watcher.EnableRaisingEvents = false;
             watcher.IncludeSubdirectories = true; // 是否应该监控子目录中发生的改变
         }
 
